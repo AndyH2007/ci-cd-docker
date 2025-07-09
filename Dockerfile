@@ -1,18 +1,16 @@
-<<<<<<< HEAD
+# Base image
 FROM node:18
 
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 3000
-=======
-FROM node:18
+# Set working directory
+WORKDIR /app
 
-WORKDIR /usr/src/app
+# Copy and install dependencies
 COPY package*.json ./
 RUN npm install
+
+# Copy app code
 COPY . .
+
+# Expose port and run app
 EXPOSE 3000
->>>>>>> 4b897444b443579f23081f318acd40a8199d73d8
 CMD ["npm", "start"]
